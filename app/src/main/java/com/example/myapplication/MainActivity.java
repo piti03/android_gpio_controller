@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 progressDialog.setMessage("process to login...");
                 progressDialog.show();
                 // you must write your codes here....
-                @SuppressLint("DefaultLocale") String URL = String.format("http://rabipoor.ir/iot/nodemcu_led/login.php?username=%s&password=%s",username,password);
+                @SuppressLint("DefaultLocale") String URL = String.format("script_address?username=%s&password=%s",username,password);
                 RequestQueue requestQueue = Volley.newRequestQueue(this);
                 StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
                         response -> {
