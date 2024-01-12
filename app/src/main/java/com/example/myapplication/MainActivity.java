@@ -3,6 +3,8 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -15,6 +17,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.myapplication.databinding.ActivityMainBinding;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
 
     // define viewBinding
@@ -25,34 +29,39 @@ public class MainActivity extends AppCompatActivity {
        binding = ActivityMainBinding.inflate(getLayoutInflater());
        View view = binding.getRoot();
         super.onCreate(savedInstanceState);
-
-    // Define some strings
-
+        // Define some strings
         // set the bottom off
         binding.button.setOnClickListener(v -> {
-            String username = binding.request1.getText().toString();
-            String password = binding.request2.getText().toString();
-            if(username.isEmpty() && password.isEmpty()){
+            String username = Objects.requireNonNull(binding.request1.getText()).toString();
+            String password = Objects.requireNonNull(binding.request2.getText()).toString();
+            if(username.isEmpty() || password.isEmpty()){
                 Toast.makeText(this, "Please fill the parameters! first", Toast.LENGTH_SHORT).show();
             }else {
-                
+                ProgressDialog progressDialog = new ProgressDialog(this);
+                progressDialog.setTitle("Please Wait");
+                progressDialog.setMessage("process to login...");
+                progressDialog.show();
                 // you must write your codes here....
-                @SuppressLint("DefaultLocale") String URL = String.format("https://localhost/myweb?username=%s&password=%s",username,password);
+                @SuppressLint("DefaultLocale") String URL = String.format("http://rabipoor.ir/iot/nodemcu_led/login.php?username=%s&password=%s",username,password);
                 RequestQueue requestQueue = Volley.newRequestQueue(this);
                 StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
                         response -> {
-                            binding.result.setText(response);
+                            if(response.contains("confirm the process")){
+                                Intent intent = new Intent(MainActivity.this, Board.class);
+                                startActivity(intent);
+                            }else{
+                                if(response.contains("no")){
+                                    Toast.makeText(this, "username or password is incorrect, please try again", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                            progressDialog.dismiss();
                         }, error -> {
-                            binding.result.setText(error.toString());
+                    Toast.makeText(this,"something went wrong, no connection to destination", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
                 });
                 requestQueue.add(stringRequest);
-
-
-
             }
         });
-
-
 
         setContentView(view);
     }

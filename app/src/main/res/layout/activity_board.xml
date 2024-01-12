@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_theme"
+    tools:context=".Board">
+    <RelativeLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="40dp"
+        android:elevation="8dp"
+        android:background="@drawable/button_fab"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_height="200dp"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/control_gpio"
+            android:layout_marginTop="16dp"
+            android:text="@string/control_gpio"
+            android:textStyle="bold"
+            android:textSize="18pt"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/control_gpio"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="-50dp"
+            android:text="@string/author"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+
+
+
+
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/led1"
+    android:layout_width="120dp"
+    android:layout_height="120dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginTop="340dp"
+    android:layout_marginStart="60dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/fh"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/yellow">
+
+        <androidx.appcompat.widget.AppCompatToggleButton
+            android:id="@+id/firstLED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/yellow">
+
+        </androidx.appcompat.widget.AppCompatToggleButton>
+    </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/fh"
+            android:layout_marginTop="8dp"
+            android:text="First LED"
+            android:textStyle="bold">
+        </TextView>
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>
+<com.google.android.material.card.MaterialCardView
+        android:id="@+id/led2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="60dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginStart="60dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/fh2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/green">
+               <androidx.appcompat.widget.AppCompatToggleButton
+                   android:id="@+id/secondLED"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:background="@color/green"
+                   android:layout_centerInParent="true">
+
+               </androidx.appcompat.widget.AppCompatToggleButton>
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/fh2"
+                android:layout_marginTop="8dp"
+                android:text="Second LED"
+                android:textStyle="bold">
+            </TextView>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+<com.google.android.material.card.MaterialCardView
+        android:id="@+id/led3"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:layout_constraintStart_toStartOf="@+id/led1"
+        app:layout_constraintTop_toBottomOf="@id/led1"
+    android:layout_marginTop="20dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/fh3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/red">
+                <androidx.appcompat.widget.AppCompatToggleButton
+                    android:id="@+id/thirdLED"
+                    android:background="@color/red"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </androidx.appcompat.widget.AppCompatToggleButton>
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/fh3"
+                android:layout_marginTop="8dp"
+                android:text="Third LED"
+                android:textStyle="bold">
+            </TextView>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+<com.google.android.material.card.MaterialCardView
+        android:id="@+id/led4"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:layout_constraintEnd_toEndOf="@id/led2"
+    app:layout_constraintTop_toBottomOf="@+id/led2"
+    android:layout_marginTop="20dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/fh4"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/orange">
+              <androidx.appcompat.widget.AppCompatToggleButton
+                  android:id="@+id/forthLED"
+                  android:layout_centerInParent="true"
+                  android:background="@color/orange"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content">
+
+              </androidx.appcompat.widget.AppCompatToggleButton>
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/fh4"
+                android:layout_marginTop="8dp"
+                android:text="Forth LED"
+                android:textStyle="bold">
+            </TextView>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <RelativeLayout
+        app:layout_constraintTop_toBottomOf="@id/led3"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="18dp"
+        android:background="@color/dark"
+        android:elevation="8dp"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_marginEnd="14dp"
+        app:layout_goneMarginStart="14dp"
+        android:layout_height="90dp">
+     <com.google.android.material.button.MaterialButton
+         android:id="@+id/myfab"
+         android:text="@string/submit"
+         android:layout_width="wrap_content"
+         android:layout_centerVertical="true"
+         android:layout_alignParentEnd="true"
+         android:layout_marginEnd="8dp"
+         android:layout_height="wrap_content"
+         tools:ignore="RelativeOverlap" />
+        <RelativeLayout
+            android:layout_marginStart="8dp"
+            android:background="@color/dark"
+            android:layout_width="220dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/led_ins"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="@string/led_instruction"
+                android:textColor="@color/semixxwhite"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_below="@+id/led_ins"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:background="@color/semixxwhite"
+                android:layout_height="2dp"/>
+            <TextView
+                android:text="@string/led_details"
+                android:gravity="center"
+                android:layout_below="@+id/led_ins"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
+    <color name="dark">#2C2A2A</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="semiwhite">#F3EFEF</color>
+    <color name="semixwhite">#C5B0B0</color>
+    <color name="semixxwhite">#665D5D</color>
+    <color name="yellow">#F1DF65</color>
+    <color name="green">#49E4D5</color>
+    <color name="orange">#E8653C</color>
+    <color name="red">#EA5C61</color>
+    <color name="dark_theme">#212121</color>
 </resources>

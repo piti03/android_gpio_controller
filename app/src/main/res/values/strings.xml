@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="login">LOGIN</string>
+    <string name="submit">Submit</string>
+    <string name="app_title">Integrated IOT </string>
+    <string name="description">this application provides features to deal with nodemcu
+    first log into the website, so the username and password must be the same as it,s in
+    database of server just by that you are permitted to go to main page.</string>
+    <string name="led_instruction">LED INSTRUCTION</string>
+    <string name="control_gpio">Control GPIO using android </string>
+    <string name="author">Developer : HamidRezaRabiPoor</string>
+    <string name="led_details">Select the state of each led then put the submit button on to send your command to server side</string>
 </resources>
