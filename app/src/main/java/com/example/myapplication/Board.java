@@ -44,7 +44,7 @@ public class Board extends AppCompatActivity {
         // Communicating with Network using Volley
         binding.myfab.setOnClickListener(v -> {
 
-            String BOARD_URL = String.format("http://rabipoor.ir/iot/nodemcu_led/update_db.php?firstLED=%s&secondLED=%s&thirdLED=%s&forthLED=%s",firstLed,secondLed,thirdLed,forthLed);
+            String BOARD_URL = String.format("script_address?firstLED=%s&secondLED=%s&thirdLED=%s&forthLED=%s",firstLed,secondLed,thirdLed,forthLed);
             RequestQueue requestQueue = Volley.newRequestQueue(this);
             StringRequest stringRequest = new StringRequest(Request.Method.GET, BOARD_URL, new Response.Listener<String>() {
                 @Override
